@@ -5,10 +5,16 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
+    <footer>
+      <ipfs-info />
+    </footer>
   </div>
 </template>
 
 <style lang="scss">
+body {
+  margin: 0px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -29,4 +35,28 @@
     }
   }
 }
+
+footer {
+  background: black;
+  color: white;
+}
+
+.sr-only {
+  position:absolute;
+  left: -10000px;
+  top:auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 </style>
+
+<script>
+import IpfsInfo from './components/IpfsInfo.vue'
+export default {
+  name: 'app',
+  components: {
+    IpfsInfo
+  }
+}
+</script>
